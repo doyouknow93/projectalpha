@@ -24,6 +24,7 @@ export default {
         try {
             const res = await axios.get("https://api2.binance.com/api/v3/ticker/24hr", config);
             this.prices = res.data.results;
+            console.log(res.data);
         }
         catch (err) {
             console.log(err);
