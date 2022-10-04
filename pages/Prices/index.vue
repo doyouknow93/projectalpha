@@ -15,11 +15,8 @@ export default {
     };
   },
   async created() {
-    const config = {
-      headers: {}
-    };
     try {
-      const res = await axios.get("https://api2.binance.com/api/v3/ticker/24hr", config);
+      const res = await axios.get("https://api2.binance.com/api/v3/ticker/24hr");
       this.prices = res.data.result;
       console.log(res.data);
     } catch (err) {
