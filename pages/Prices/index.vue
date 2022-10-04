@@ -11,13 +11,14 @@ import Price from '../../components/Price';
 export default {
   data() {
     return {
-      prices: []
+      prices: null
     };
   },
   async created() {
     try {
       const res = await axios.get("https://api2.binance.com/api/v3/ticker/24hr");
-      this.prices = res.data.result;
+      console.log("created prices", res.data)
+      this.prices = res.data;
       console.log(res.data);
     } catch (err) {
       console.log(err);
