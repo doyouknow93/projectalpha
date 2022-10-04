@@ -1,8 +1,7 @@
 <template>
-    <div>
-        <Price v-for="price in prices" :key="price.symbol" 
-        :symbol="price.symbol" :lastPrice="price.lastPrice"/>
-    </div>
+  <div>
+    <Price v-for="price in prices" :key="price.symbol" :symbol="price.symbol" :lastprice="price.lastprice"/>
+  </div>
 </template>
 
 <script>
@@ -18,12 +17,11 @@ export default {
     async created() {
         const config = {
             headers: {
-                "Accept": "application/json"
             }
         };
         try {
             const res = await axios.get("https://api2.binance.com/api/v3/ticker/24hr", config);
-            this.prices = res.data.results;
+            this.prices = res.data.result;
             console.log(res.data);
         }
         catch (err) {

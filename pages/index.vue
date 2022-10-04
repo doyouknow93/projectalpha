@@ -32,7 +32,6 @@ export default {
     async mounted () {
       console.log("i'm created");
       const res= await axios.get('https://api2.binance.com/api/v3/ticker/24hr')
-      console.log(res.data);
       this.results=res.data;
     }
 
