@@ -3,7 +3,6 @@
     <div v-for="result in results" :key="result.symbol">
       {{result.symbol}}
     </div>
-    Welcome to Mammeta
   </div>
 </template>
 
