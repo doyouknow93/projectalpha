@@ -1,14 +1,16 @@
 <template>
   <div class="price">
-    <p>{{ symbol }}</p>
-    <p>{{ lastPrice }}</p>
+    <p>Symbol: {{ symbol }} 
+      <br> Last price: {{ lastPrice }}
+      <br> Volume: {{ volume }} 
+      <br> Price Change %: {{ priceChangePercent }}</p>
   </div>
 </template>
 
 <script>
 export default {
   name: 'Price',
-  props: ['symbol', 'lastPrice']
+  props: ['symbol', 'volume', 'priceChangePercent', 'lastPrice']
 }
 </script>
 

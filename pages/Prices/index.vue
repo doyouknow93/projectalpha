@@ -1,6 +1,10 @@
 <template>
   <div>
-    <Price v-for="price in prices" :key="price.symbol" :symbol="price.symbol" :lastprice="price.lastprice"/>
+    <Price v-for="price in prices" :key="price.symbol" 
+    :symbol="price.symbol" 
+    :lastPrice="price.lastPrice"
+    :volume="price.volume" 
+    :priceChangePercent="price.priceChangePercent"/>
   </div>
 </template>
 
@@ -11,15 +15,13 @@ import Price from '../../components/Price';
 export default {
   data() {
     return {
-      prices: null
+      prices: []
     };
   },
   async created() {
     try {
       const res = await axios.get("https://api2.binance.com/api/v3/ticker/24hr");
-      console.log("created prices", res.data)
       this.prices = res.data;
-      console.log(res.data);
     } catch (err) {
       console.log(err);
     }
